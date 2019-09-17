@@ -1,0 +1,26 @@
+# folders
+lib/
+node_modules/
+
+# logs
+logs
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# reports
+coverage
+
+# local data
+pids
+tsconfig.tsbuildinfo
+.env
+.eslintcache
+.yarn-integrity
+*.pid
+*.seed
+*.pid.lock
+*.tgz
+
+# docs
+CHANGELOG.md
