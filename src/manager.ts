@@ -1,14 +1,14 @@
 import Substitution from './substitution';
-import { half } from './utils';
+import SubstitutionsPair from './substitutions-group';
 
 export default class SubstitutionManager {
     private list: Substitution[] = [];
 
     public add(value: string, position: number): void {
-        const { list } = this;
         const newItem = new Substitution(value, position);
-        const index = this.findIndex(newItem, 0, Math.max(half(list.length), 1));
 
+        this.findIndex(newItem);
+        /*
         if (index >= 0) {
             if (Number.isFinite(index)) {
                 list.splice(index, 0, newItem);
@@ -18,26 +18,70 @@ export default class SubstitutionManager {
         } else if (Number.isFinite(index)) {
             list[Math.abs(index)] = newItem;
         }
+        */
     }
 
-    // FIXME: rewrite to iterative binary search
-    private findIndex(newItem: Substitution, left: number, right: number): number {
+    public getList(): Substitution[] {
+        return [...this.list];
+    }
+
+    private findIndex(newItem: Substitution): void {
         const { list } = this;
+        let left = 0;
+        let right = list.length;
+        let middle = 0;
+        let currentItem = list[right - 1];
 
-        if (right <= list.length && left < right) {
-            const currentItem = list[right - 1];
+        if (currentItem && currentItem.end > newItem.start) {
+            while (left <= right) {
+                middle = Math.floor((left + right) / 2);
+                currentItem = list[middle];
 
-            if (currentItem.end <= newItem.start)
-                return this.findIndex(newItem, right, right + half(list.length - right + 1));
-            if (currentItem.start >= newItem.end) return this.findIndex(newItem, left, left + half(right - left));
-            if (newItem.isIncludedIn(currentItem)) return -Infinity;
-            if (currentItem.isIncludedIn(newItem)) return right === 1 ? Infinity : -(right - 1);
-            if (currentItem.isCross(newItem)) return Infinity;
+                if (currentItem.end <= newItem.start) {
+                    left = middle + 1;
+                } else if (currentItem.start >= newItem.end) {
+                    right = middle - 1;
+                } else {
+                    if (newItem.isIncludedIn(currentItem)) break;
+                    if (currentItem.isIncludedIn(newItem)) list[middle] = newItem;
+                    if (currentItem.isCross(newItem)) list[middle] = new SubstitutionsPair(currentItem, newItem);
+                }
+            }
+        } else {
+            list.push(newItem);
         }
-
-        return right;
     }
+
     /*
     half = (value: number): number => ~~(value / 2);
+
+    if (right <= list.length && left < right) {
+        const currentItem = list[right - 1];
+
+        if (currentItem.end <= newItem.start)
+            return this.findIndex(newItem, right, right + half(list.length - right + 1));
+        if (currentItem.start >= newItem.end) return this.findIndex(newItem, left, left + half(right - left));
+        if (newItem.isIncludedIn(currentItem)) return -Infinity;
+        if (currentItem.isIncludedIn(newItem)) return right === 1 ? Infinity : -(right - 1);
+        if (currentItem.isCross(newItem)) return Infinity;
+    }
+
+    return right;
     */
 }
+
+/*
+function BinarySearch(t,A)         // t - искомый элемент,
+{                                  // A - упорядоченный массив, в котором ищем.
+    var i = 0, j = A.length-1, k;
+
+    while (i <= j)
+    {  k = Math.floor((i+j)/2);
+       if (t === A[k]) return k;
+       else if (t < A[k]) j = k-1;
+       else i = k+1;
+    }
+                                   // На выходе индекс искомого элемента.
+    return -1;                     // Если искомого элемента нет в массиве, то -1.
+}
+*/

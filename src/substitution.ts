@@ -9,11 +9,11 @@ export default class Substitution {
         this.end = position + value.length;
     }
 
-    isIncludedIn(substitution: Substitution): boolean {
+    public isIncludedIn(substitution: Substitution): boolean {
         return this.start >= substitution.start && this.end <= substitution.end;
     }
 
-    isCross(substitution: Substitution): boolean {
+    public isCross(substitution: Substitution): boolean {
         return this.start >= substitution.start && this.start <= substitution.end && this.end >= substitution.end;
     }
 }
