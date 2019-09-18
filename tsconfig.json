@@ -9,6 +9,10 @@
         "incremental": false,
         "allowJs": false,
         "allowUnreachableCode": false,
+        "strictFunctionTypes": true,
+        "strictPropertyInitialization": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
         "noUnusedLocals": true,
@@ -25,5 +29,5 @@
         "allowSyntheticDefaultImports": true
     },
     "include": ["src/**/*.ts"],
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules", "lib"]
 }
