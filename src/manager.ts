@@ -25,12 +25,16 @@ export default class SubstitutionManager {
         return [...this.list];
     }
 
+    public clear(): void {
+        this.list = [];
+    }
+
     private findIndex(newItem: Substitution): void {
         const { list } = this;
         let left = 0;
-        let right = list.length;
+        let right = list.length - 1;
         let middle = 0;
-        let currentItem = list[right - 1];
+        let currentItem = list[right];
 
         if (currentItem && currentItem.end > newItem.start) {
             while (left <= right) {
@@ -42,10 +46,18 @@ export default class SubstitutionManager {
                 } else if (currentItem.start >= newItem.end) {
                     right = middle - 1;
                 } else {
-                    if (newItem.isIncludedIn(currentItem)) break;
-                    if (currentItem.isIncludedIn(newItem)) list[middle] = newItem;
-                    if (currentItem.isCross(newItem)) list[middle] = new SubstitutionsPair(currentItem, newItem);
+                    if (currentItem.isIncludedIn(newItem)) {
+                        list[middle] = newItem;
+                    } else if (currentItem.isCross(newItem) || newItem.isCross(currentItem)) {
+                        list[middle] = new SubstitutionsPair(currentItem, newItem);
+                    }
+
+                    break;
                 }
+            }
+
+            if (left > right) {
+                list.splice(left, 0, newItem);
             }
         } else {
             list.push(newItem);

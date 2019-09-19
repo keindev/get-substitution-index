@@ -6,7 +6,7 @@ export default class Substitution {
     constructor(value: string, position: number) {
         this.value = value;
         this.start = position;
-        this.end = position + value.length;
+        this.end = position + value.length - 1;
     }
 
     public isIncludedIn(substitution: Substitution): boolean {
@@ -14,6 +14,6 @@ export default class Substitution {
     }
 
     public isCross(substitution: Substitution): boolean {
-        return this.start >= substitution.start && this.start <= substitution.end && this.end >= substitution.end;
+        return this.start > substitution.start && this.start < substitution.end && this.end > substitution.end;
     }
 }
