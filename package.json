@@ -34,8 +34,8 @@
     "engines": {
         "node": ">=10.0.0"
     },
-    "dependencies": {},
     "devDependencies": {
+        "@types/faker": "^4.1.5",
         "@types/jest": "^24.0.18",
         "@types/node": "^12.7.5",
         "@typescript-eslint/eslint-plugin": "^2.3.0",
@@ -47,6 +47,7 @@
         "eslint-config-prettier": "^6.3.0",
         "eslint-plugin-import": "^2.18.2",
         "eslint-plugin-jest": "^22.17.0",
+        "faker": "^4.1.0",
         "husky": "^3.0.5",
         "jest": "^24.9.0",
         "npm-run-all": "^4.1.5",
