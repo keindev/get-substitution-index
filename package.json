@@ -1,8 +1,8 @@
 {
-    "name": "get-substitution-index",
+    "name": "string-lookup-manager",
     "version": "0.1.0",
     "description": "Utility library for manage text substitutions",
-    "homepage": "https://github.com/keindev/get-substitution-index#readme",
+    "homepage": "https://github.com/keindev/string-lookup-manager#readme",
     "license": "MIT",
     "author": {
         "name": "Daniil Ryazanov",
@@ -17,10 +17,10 @@
     "types": "lib/provider.d.ts",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/keindev/get-substitution-index.git"
+        "url": "git+https://github.com/keindev/string-lookup-manager.git"
     },
     "bugs": {
-        "url": "https://github.com/keindev/get-substitution-index/issues"
+        "url": "https://github.com/keindev/string-lookup-manager/issues"
     },
     "scripts": {
         "clean": "rimraf lib coverage",

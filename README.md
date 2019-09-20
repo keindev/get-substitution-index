@@ -1,10 +1,10 @@
 ![](/media/logo.svg)
 
-[![Build Status](https://travis-ci.com/keindev/get-substitution-index.svg?branch=master)](https://travis-ci.com/keindev/get-substitution-index)
-[![Codecov](https://codecov.io/gh/keindev/get-substitution-index/branch/master/graph/badge.svg)](https://codecov.io/gh/keindev/get-substitution-index)
-[![CodeFactor](https://www.codefactor.io/repository/github/keindev/get-substitution-index/badge)](https://www.codefactor.io/repository/github/keindev/get-substitution-index)
-[![npm](https://img.shields.io/npm/v/get-substitution-index.svg)](https://www.npmjs.com/package/get-substitution-index)
-[![license](https://img.shields.io/npm/l/get-substitution-index.svg)](https://www.npmjs.com/package/get-substitution-index)
+[![Build Status](https://travis-ci.com/keindev/string-lookup-manager.svg?branch=master)](https://travis-ci.com/keindev/string-lookup-manager)
+[![Codecov](https://codecov.io/gh/keindev/string-lookup-manager/branch/master/graph/badge.svg)](https://codecov.io/gh/keindev/string-lookup-manager)
+[![CodeFactor](https://www.codefactor.io/repository/github/keindev/string-lookup-manager/badge)](https://www.codefactor.io/repository/github/keindev/string-lookup-manager)
+[![npm](https://img.shields.io/npm/v/string-lookup-manager.svg)](https://www.npmjs.com/package/string-lookup-manager)
+[![license](https://img.shields.io/npm/l/string-lookup-manager.svg)](https://www.npmjs.com/package/string-lookup-manager)
 
 Utility library for manage text substitutions.
 
@@ -13,13 +13,13 @@ Utility library for manage text substitutions.
 ### Yarn
 
 ```console
-yarn add get-substitution-index
+yarn add string-lookup-manager
 ```
 
 ### NPM
 
 ```console
-npm install get-substitution-index
+npm install string-lookup-manager
 ```
 
 ## Usage
