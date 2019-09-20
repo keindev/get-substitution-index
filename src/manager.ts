@@ -1,7 +1,6 @@
 import LookupItem from './item';
-import LookupGroup from './group';
 
-export default class LookupManager {
+export class LookupManager {
     private list: LookupItem[] = [];
 
     public add(value: string, position: number): void {
@@ -13,6 +12,8 @@ export default class LookupManager {
         let currentItem = list[right];
 
         if (currentItem && currentItem.end > newItem.start) {
+            let deleteCount = 0;
+
             while (left <= right) {
                 middle = Math.floor((left + right) / 2);
                 currentItem = list[middle];
@@ -22,19 +23,15 @@ export default class LookupManager {
                 } else if (currentItem.start >= newItem.end) {
                     right = middle - 1;
                 } else {
-                    if (currentItem.isIncludedIn(newItem)) {
-                        list[middle] = newItem;
-                    } else if (currentItem.isCross(newItem) || newItem.isCross(currentItem)) {
-                        list[middle] = new LookupGroup(currentItem, newItem);
-                    }
+                    // FIXME: add cross strings merging
+                    while (currentItem && currentItem.isIncludedIn(newItem)) currentItem = list[middle + ++deleteCount];
 
+                    list.splice(middle, deleteCount, newItem);
                     break;
                 }
             }
 
-            if (left > right) {
-                list.splice(left, 0, newItem);
-            }
+            if (left > right) list.splice(left, deleteCount, newItem);
         } else {
             list.push(newItem);
         }

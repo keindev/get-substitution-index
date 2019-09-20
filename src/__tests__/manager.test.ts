@@ -1,5 +1,5 @@
 import faker from 'faker';
-import LookupManager from '../manager';
+import { LookupManager } from '../manager';
 
 const manager = new LookupManager();
 
