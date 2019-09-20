@@ -1,28 +1,15 @@
-import Substitution from './substitution';
-import SubstitutionsPair from './substitutions-group';
+import LookupItem from './item';
+import LookupGroup from './group';
 
-export default class SubstitutionManager {
-    private list: Substitution[] = [];
+export default class LookupManager {
+    private list: LookupItem[] = [];
 
     public add(value: string, position: number): void {
-        const newItem = new Substitution(value, position);
-
-        this.findIndex(newItem);
-    }
-
-    public getList(): Substitution[] {
-        return [...this.list];
-    }
-
-    public clear(): void {
-        this.list = [];
-    }
-
-    private findIndex(newItem: Substitution): void {
+        const newItem = new LookupItem(value, position);
         const { list } = this;
         let left = 0;
-        let right = list.length - 1;
         let middle = 0;
+        let right = list.length - 1;
         let currentItem = list[right];
 
         if (currentItem && currentItem.end > newItem.start) {
@@ -38,7 +25,7 @@ export default class SubstitutionManager {
                     if (currentItem.isIncludedIn(newItem)) {
                         list[middle] = newItem;
                     } else if (currentItem.isCross(newItem) || newItem.isCross(currentItem)) {
-                        list[middle] = new SubstitutionsPair(currentItem, newItem);
+                        list[middle] = new LookupGroup(currentItem, newItem);
                     }
 
                     break;
@@ -51,5 +38,13 @@ export default class SubstitutionManager {
         } else {
             list.push(newItem);
         }
+    }
+
+    public getItems(): LookupItem[] {
+        return [...this.list];
+    }
+
+    public clear(): void {
+        this.list = [];
     }
 }
