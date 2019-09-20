@@ -1,14 +1,12 @@
-<p align="center"><img width="400" src="https://cdn.jsdelivr.net/gh/keindev/get-substitution-index/media/logo.svg" alt="Package logo"></p>
+![](/media/logo.svg)
 
-<p align="center">
-    <a href="https://travis-ci.com/keindev/get-substitution-index"><img src="https://travis-ci.com/keindev/get-substitution-index.svg?branch=master" alt="Build Status"></a>
-    <a href="https://codecov.io/gh/keindev/get-substitution-index"><img src="https://codecov.io/gh/keindev/get-substitution-index/branch/master/graph/badge.svg" /></a>
-    <a href="https://www.npmjs.com/package/get-substitution-index"><img alt="npm" src="https://img.shields.io/npm/v/get-substitution-index.svg"></a>
-    <a href="https://www.npmjs.com/package/get-substitution-index"><img alt="NPM" src="https://img.shields.io/npm/l/get-substitution-index.svg"></a>
-    <a href="https://www.codefactor.io/repository/github/keindev/get-substitution-index"><img src="https://www.codefactor.io/repository/github/keindev/get-substitution-index/badge" alt="CodeFactor" /></a>
-</p>
+[![Build Status](https://travis-ci.com/keindev/get-substitution-index.svg?branch=master)](https://travis-ci.com/keindev/get-substitution-index)
+[![Codecov](https://codecov.io/gh/keindev/get-substitution-index/branch/master/graph/badge.svg)](https://codecov.io/gh/keindev/get-substitution-index)
+[![CodeFactor](https://www.codefactor.io/repository/github/keindev/get-substitution-index/badge)](https://www.codefactor.io/repository/github/keindev/get-substitution-index)
+[![npm](https://img.shields.io/npm/v/get-substitution-index.svg)](https://www.npmjs.com/package/get-substitution-index)
+[![license](https://img.shields.io/npm/l/get-substitution-index.svg)](https://www.npmjs.com/package/get-substitution-index)
 
-Utility library for manage text substitutions
+Utility library for manage text substitutions.
 
 ## Install
 
