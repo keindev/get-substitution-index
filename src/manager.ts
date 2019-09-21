@@ -1,19 +1,18 @@
 import LookupItem from './item';
+import LookupGroup from './group';
 
 export class LookupManager {
     private list: LookupItem[] = [];
 
     public add(value: string, position: number): void {
-        const newItem = new LookupItem(value, position);
         const { list } = this;
+        const newItem = new LookupItem(value, position);
         let left = 0;
         let middle = 0;
         let right = list.length - 1;
         let currentItem = list[right];
 
         if (currentItem && currentItem.end > newItem.start) {
-            let deleteCount = 0;
-
             while (left <= right) {
                 middle = Math.floor((left + right) / 2);
                 currentItem = list[middle];
@@ -23,15 +22,20 @@ export class LookupManager {
                 } else if (currentItem.start >= newItem.end) {
                     right = middle - 1;
                 } else {
-                    // FIXME: add cross strings merging
-                    while (currentItem && currentItem.isIncludedIn(newItem)) currentItem = list[middle + ++deleteCount];
+                    if (currentItem.isIncludedIn(newItem)) {
+                        const leftItemsCount = this.getLeftItemsCount(newItem, middle);
+                        const rightItemsCount = this.getRightItemsCount(newItem, middle);
 
-                    list.splice(middle, deleteCount, newItem);
+                        list.splice(middle - leftItemsCount, leftItemsCount + rightItemsCount, newItem);
+                    } else if (currentItem.isCross(newItem) || newItem.isCross(currentItem)) {
+                        list[middle] = new LookupGroup(currentItem, newItem);
+                    }
+
                     break;
                 }
             }
 
-            if (left > right) list.splice(left, deleteCount, newItem);
+            if (left > right) list.splice(left, 0, newItem);
         } else {
             list.push(newItem);
         }
@@ -43,5 +47,25 @@ export class LookupManager {
 
     public clear(): void {
         this.list = [];
+    }
+
+    private getLeftItemsCount(newItem: LookupItem, from: number): number {
+        const { list } = this;
+        let count = -1;
+        let currentItem: LookupItem = list[from + count];
+
+        while (currentItem && currentItem.start >= newItem.start) currentItem = list[from + --count];
+
+        return Math.abs(count) - 1;
+    }
+
+    private getRightItemsCount(newItem: LookupItem, from: number): number {
+        const { list } = this;
+        let count = 1;
+        let currentItem: LookupItem = list[from + count];
+
+        while (currentItem && currentItem.end <= newItem.end) currentItem = list[from + ++count];
+
+        return count;
     }
 }
