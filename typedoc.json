@@ -1,0 +1,12 @@
+{
+    "out": "docs/api",
+    "hideGenerator": true,
+    "hideSources": true,
+    "hideBreadcrumbs": true,
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "excludeNotExported": true,
+    "readme": "none",
+    "mode": "file",
+    "exclude": ["**/__tests__/**/*", "**/__mocks__/**/*"]
+}
