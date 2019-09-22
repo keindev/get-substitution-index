@@ -1,5 +1,5 @@
 {
-    "out": "docs/lib",
+    "out": "docs/api",
     "hideGenerator": true,
     "hideSources": true,
     "hideBreadcrumbs": true,

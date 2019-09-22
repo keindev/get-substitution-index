@@ -1,9 +1,21 @@
 import LookupItem from './item';
 import LookupGroup from './group';
 
+/**
+ * Manager for working with an array of strings
+ */
 export class LookupManager {
     private list: LookupItem[] = [];
 
+    /**
+     * Adds a new string to the list based on the position in the text:
+     * -   in the case of intersection of strings positions, the strings are merged
+     * -   if a new string extends an existing one, it will replace it
+     * -   if a new string is part of an existing string, it will not be added
+     *
+     * @param value - string to add
+     * @param position - position in text
+     */
     public add(value: string, position: number): void {
         const { list } = this;
         const newItem = new LookupItem(value, position);
@@ -41,10 +53,16 @@ export class LookupManager {
         }
     }
 
+    /**
+     * Returns a list of added rows
+     */
     public getItems(): LookupItem[] {
         return [...this.list];
     }
 
+    /**
+     * Clears a string list
+     */
     public clear(): void {
         this.list = [];
     }

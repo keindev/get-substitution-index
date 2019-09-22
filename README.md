@@ -60,7 +60,7 @@ console.log(manager.getItems());
 
 ## API
 
-[Read more](docs/lib/README.md)
+Read the [API documentation](docs/api/README.md) for more information.
 
 ## License
 
