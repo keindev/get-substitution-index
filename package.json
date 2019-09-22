@@ -25,12 +25,12 @@
     "scripts": {
         "clean": "rimraf lib coverage",
         "lint": "eslint src/**/*.ts --fix",
-        "spellcheck": "cspell -c .vscode/cspell.json --no-summary \"*.*\" \"docs/**/*\" \"**/*.ts\" \"**/*.js\"",
+        "spellcheck": "cspell -c .vscode/cspell.json --no-summary \"*.*\" \"**/*.ts\" \"**/*.js\"",
         "test": "jest",
         "docs": "typedoc",
         "changelog": "changelog generate",
         "build:ts": "tsc",
-        "build": "npm-run-all clean spellcheck lint build:* test"
+        "build": "npm-run-all clean spellcheck lint test build:* docs"
     },
     "engines": {
         "node": ">=10.0.0"
