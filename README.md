@@ -1,4 +1,4 @@
-![](/media/logo.svg)
+![](https://cdn.jsdelivr.net/gh/keindev/string-lookup-manager/media/logo.svg)
 
 [![Build Status](https://travis-ci.com/keindev/string-lookup-manager.svg?branch=master)](https://travis-ci.com/keindev/string-lookup-manager)
 [![Codecov](https://codecov.io/gh/keindev/string-lookup-manager/branch/master/graph/badge.svg)](https://codecov.io/gh/keindev/string-lookup-manager)
