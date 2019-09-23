@@ -1,7 +1,7 @@
 {
     "name": "string-lookup-manager",
-    "version": "1.0.0",
-    "description": "Utility library for manage text substitutions",
+    "version": "1.0.1",
+    "description": "An easy way to collect regular expressions search results",
     "homepage": "https://github.com/keindev/string-lookup-manager#readme",
     "license": "MIT",
     "author": {
@@ -12,9 +12,9 @@
         "substitutions",
         "string"
     ],
-    "main": "lib/provider.js",
-    "module": "lib/provider.js",
-    "types": "lib/provider.d.ts",
+    "main": "lib/manager.js",
+    "module": "lib/manager.js",
+    "types": "lib/manager.d.ts",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/keindev/string-lookup-manager.git"
@@ -40,8 +40,8 @@
         "@types/faker": "^4.1.5",
         "@types/jest": "^24.0.18",
         "@types/node": "^12.7.5",
-        "@typescript-eslint/eslint-plugin": "^2.3.0",
-        "@typescript-eslint/parser": "^2.3.0",
+        "@typescript-eslint/eslint-plugin": "^2.3.1",
+        "@typescript-eslint/parser": "^2.3.1",
         "changelog-guru": "^1.0.0",
         "cspell": "^4.0.30",
         "eslint": "^6.4.0",
