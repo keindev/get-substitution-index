@@ -12,9 +12,9 @@
         "substitutions",
         "string"
     ],
-    "main": "lib/provider.js",
-    "module": "lib/provider.js",
-    "types": "lib/provider.d.ts",
+    "main": "lib/manager.js",
+    "module": "lib/manager.js",
+    "types": "lib/manager.d.ts",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/keindev/string-lookup-manager.git"
