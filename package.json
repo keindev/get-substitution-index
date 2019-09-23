@@ -1,7 +1,7 @@
 {
     "name": "string-lookup-manager",
     "version": "1.0.0",
-    "description": "Utility library for manage text substitutions",
+    "description": "An easy way to collect regular expressions search results",
     "homepage": "https://github.com/keindev/string-lookup-manager#readme",
     "license": "MIT",
     "author": {
