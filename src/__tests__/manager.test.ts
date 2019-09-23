@@ -1,7 +1,11 @@
 import faker from 'faker';
 import { LookupManager } from '../manager';
 
-const manager = new LookupManager();
+interface ExternalInfo {
+    index: number;
+}
+
+const manager = new LookupManager<ExternalInfo>();
 const firstName = faker.name.firstName();
 const lastName = faker.name.lastName();
 const suffix = faker.name.suffix();
@@ -21,7 +25,7 @@ describe('LookupManager', () => {
             manager.add(firstName, length * 3);
             manager.add(firstName, length);
 
-            expect(manager.getItems()).toMatchObject([
+            expect(manager.getList()).toMatchObject([
                 { value: firstName, start: 0, end: length - 1 },
                 { value: firstName, start: length, end: length * 2 - 1 },
                 { value: firstName, start: length * 2, end: length * 3 - 1 },
@@ -33,14 +37,14 @@ describe('LookupManager', () => {
             manager.add(firstName, 0);
             manager.add(fullName, 0);
 
-            expect(manager.getItems()).toMatchObject([{ value: fullName, start: 0, end: fullName.length - 1 }]);
+            expect(manager.getList()).toMatchObject([{ value: fullName, start: 0, end: fullName.length - 1 }]);
         });
 
         it('When an existing string expands a new one, new string is ignored', () => {
             manager.add(fullName, 0);
             manager.add(firstName, 0);
 
-            expect(manager.getItems()).toMatchObject([{ value: fullName, start: 0, end: fullName.length - 1 }]);
+            expect(manager.getList()).toMatchObject([{ value: fullName, start: 0, end: fullName.length - 1 }]);
         });
 
         it('When a new string extends existing strings, a new string replaces them', () => {
@@ -52,7 +56,7 @@ describe('LookupManager', () => {
             manager.add(suffix, prefix.length + firstName.length + lastName.length);
             manager.add(fullName, prefix.length);
 
-            expect(manager.getItems()).toMatchObject([
+            expect(manager.getList()).toMatchObject([
                 { value: prefix, start: 0, end: prefix.length - 1 },
                 { value: fullName, start: prefix.length, end: prefix.length + fullName.length - 1 },
             ]);
@@ -62,7 +66,19 @@ describe('LookupManager', () => {
             manager.add(`${firstName} ${lastName}`, 0);
             manager.add(`${lastName} ${suffix}`, firstName.length);
 
-            expect(manager.getItems()).toMatchObject([{ value: fullName, start: 0, end: fullName.length - 1 }]);
+            expect(manager.getList()).toMatchObject([{ value: fullName, start: 0, end: fullName.length - 1 }]);
+        });
+    });
+
+    describe('Replace strings', () => {
+        it('Replacing tags in text with markdown code block', () => {
+            const text = '<div></div> example';
+
+            manager.add('<div></div>', 0, { index: 0 });
+
+            manager.replaceIn(text, item => `\`${item.value}\``);
+
+            expect(manager.replaceIn(text, item => `\`${item.value}\``)).toBe('`<div></div>` example');
         });
     });
 });

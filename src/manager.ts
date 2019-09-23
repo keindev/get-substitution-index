@@ -4,8 +4,8 @@ import LookupGroup from './group';
 /**
  * Manager for working with an array of strings
  */
-export class LookupManager {
-    private list: LookupItem[] = [];
+export class LookupManager<T> {
+    private list: LookupItem<T>[] = [];
 
     /**
      * Adds a new string to the list based on the position in the text:
@@ -16,9 +16,9 @@ export class LookupManager {
      * @param value - string to add
      * @param position - position in text
      */
-    public add(value: string, position: number): void {
+    public add(value: string, position: number, info?: T): void {
         const { list } = this;
-        const newItem = new LookupItem(value, position);
+        const newItem = new LookupItem<T>(value, position, info);
         let left = 0;
         let middle = 0;
         let right = list.length - 1;
@@ -40,7 +40,7 @@ export class LookupManager {
 
                         list.splice(middle - leftItemsCount, leftItemsCount + rightItemsCount, newItem);
                     } else if (currentItem.isCross(newItem) || newItem.isCross(currentItem)) {
-                        list[middle] = new LookupGroup(currentItem, newItem);
+                        list[middle] = new LookupGroup<T>(currentItem, newItem);
                     }
 
                     break;
@@ -56,8 +56,29 @@ export class LookupManager {
     /**
      * Returns a list of added rows
      */
-    public getItems(): LookupItem[] {
+    public getList(): LookupItem<T>[] {
         return [...this.list];
+    }
+
+    /**
+     * Replace strings in the text at the specified position, calling the conversion function for each replacement
+     * @param text - text for replace
+     */
+    // TODO: add example
+    public replaceIn(text: string, wrap: (item: LookupItem<T>) => string): string {
+        const stack: string[] = [];
+        let position = 0;
+
+        this.list.forEach(item => {
+            if (position < item.start) stack.push(text.substring(position, item.start));
+
+            stack.push(wrap(item));
+            position = item.end + 1;
+        });
+
+        stack.push(text.substring(position));
+
+        return stack.join('');
     }
 
     /**
@@ -67,20 +88,20 @@ export class LookupManager {
         this.list = [];
     }
 
-    private getLeftItemsCount(newItem: LookupItem, from: number): number {
+    private getLeftItemsCount(newItem: LookupItem<T>, from: number): number {
         const { list } = this;
         let count = -1;
-        let currentItem: LookupItem = list[from + count];
+        let currentItem: LookupItem<T> = list[from + count];
 
         while (currentItem && currentItem.start >= newItem.start) currentItem = list[from + --count];
 
         return Math.abs(count) - 1;
     }
 
-    private getRightItemsCount(newItem: LookupItem, from: number): number {
+    private getRightItemsCount(newItem: LookupItem<T>, from: number): number {
         const { list } = this;
         let count = 1;
-        let currentItem: LookupItem = list[from + count];
+        let currentItem: LookupItem<T> = list[from + count];
 
         while (currentItem && currentItem.end <= newItem.end) currentItem = list[from + ++count];
 
