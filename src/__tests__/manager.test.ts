@@ -1,8 +1,9 @@
 import faker from 'faker';
 import { LookupManager } from '../manager';
+import LookupItem from '../item';
 
 interface ExternalInfo {
-    index: number;
+    value: string;
 }
 
 const manager = new LookupManager<ExternalInfo>();
@@ -72,13 +73,12 @@ describe('LookupManager', () => {
 
     describe('Replace strings', () => {
         it('Replacing tags in text with markdown code block', () => {
-            const text = '<div></div> example';
+            const text = 'code <div /> example';
+            const wrap = (item: LookupItem<ExternalInfo>): string => `\`${(item.info as ExternalInfo).value}\``;
 
-            manager.add('<div></div>', 0, { index: 0 });
+            manager.add('<div />', 5, { value: '<span />' });
 
-            manager.replaceIn(text, item => `\`${item.value}\``);
-
-            expect(manager.replaceIn(text, item => `\`${item.value}\``)).toBe('`<div></div>` example');
+            expect(manager.replace(text, wrap)).toBe('code `<span />` example');
         });
     });
 });

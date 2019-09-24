@@ -62,10 +62,10 @@ export class LookupManager<T> {
 
     /**
      * Replace strings in the text at the specified position, calling the conversion function for each replacement
-     * @param text - text for replace
+     *
+     * @param text - the text in which the string will be replaced
      */
-    // TODO: add example
-    public replaceIn(text: string, wrap: (item: LookupItem<T>) => string): string {
+    public replace(text: string, wrap: (item: LookupItem<T>) => string): string {
         const stack: string[] = [];
         let position = 0;
 

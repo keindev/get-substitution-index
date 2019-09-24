@@ -18,7 +18,7 @@ Manager for working with an array of strings
 * [add](lookupmanager.md#add)
 * [clear](lookupmanager.md#clear)
 * [getList](lookupmanager.md#getlist)
-* [replaceIn](lookupmanager.md#replacein)
+* [replace](lookupmanager.md#replace)
 
 ## Methods
 
@@ -63,9 +63,9 @@ Returns a list of added rows
 
 ___
 
-###  replaceIn
+###  replace
 
-▸ **replaceIn**(`text`: string, `wrap`: function): *string*
+▸ **replace**(`text`: string, `wrap`: function): *string*
 
 Replace strings in the text at the specified position, calling the conversion function for each replacement
 
@@ -73,7 +73,7 @@ Replace strings in the text at the specified position, calling the conversion fu
 
 ▪ **text**: *string*
 
-text for replace
+the text in which the string will be replaced
 
 ▪ **wrap**: *function*
 
