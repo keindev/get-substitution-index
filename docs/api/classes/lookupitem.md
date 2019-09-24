@@ -1,7 +1,11 @@
 
-# Class: LookupItem
+# Class: LookupItem <**T**>
 
 Main parameters of the string, including its position in the text
+
+## Type parameters
+
+▪ **T**
 
 ## Hierarchy
 
@@ -18,6 +22,7 @@ Main parameters of the string, including its position in the text
 ### Properties
 
 * [end](lookupitem.md#end)
+* [info](lookupitem.md#info)
 * [start](lookupitem.md#start)
 * [value](lookupitem.md#value)
 
@@ -30,7 +35,7 @@ Main parameters of the string, including its position in the text
 
 ###  constructor
 
-\+ **new LookupItem**(`value`: string, `position`: number): *[LookupItem](lookupitem.md)*
+\+ **new LookupItem**(`value`: string, `position`: number, `info?`: [T](undefined)): *[LookupItem](lookupitem.md)*
 
 **Parameters:**
 
@@ -38,6 +43,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `value` | string | string value |
 `position` | number | position in text  |
+`info?` | [T](undefined) | - |
 
 **Returns:** *[LookupItem](lookupitem.md)*
 
@@ -48,6 +54,14 @@ Name | Type | Description |
 • **end**: *number*
 
 String end position index
+
+___
+
+###  info
+
+• **info**: *T | undefined*
+
+External info
 
 ___
 
@@ -69,7 +83,7 @@ String value
 
 ###  isCross
 
-▸ **isCross**(`item`: [LookupItem](lookupitem.md)): *boolean*
+▸ **isCross**(`item`: [LookupItem](lookupitem.md)‹T›): *boolean*
 
 Checks if positions is cross
 
@@ -77,7 +91,7 @@ Checks if positions is cross
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`item` | [LookupItem](lookupitem.md) | object to compare  |
+`item` | [LookupItem](lookupitem.md)‹T› | object to compare  |
 
 **Returns:** *boolean*
 
@@ -85,7 +99,7 @@ ___
 
 ###  isIncludedIn
 
-▸ **isIncludedIn**(`item`: [LookupItem](lookupitem.md)): *boolean*
+▸ **isIncludedIn**(`item`: [LookupItem](lookupitem.md)‹T›): *boolean*
 
 Checks if the given string is part of the current string
 
@@ -93,6 +107,6 @@ Checks if the given string is part of the current string
 
 Name | Type | Description |
 ------ | ------ | ------ |
-`item` | [LookupItem](lookupitem.md) | object to compare  |
+`item` | [LookupItem](lookupitem.md)‹T› | object to compare  |
 
 **Returns:** *boolean*
