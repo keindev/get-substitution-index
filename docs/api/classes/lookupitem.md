@@ -35,7 +35,7 @@ Main parameters of the string, including its position in the text
 
 ###  constructor
 
-\+ **new LookupItem**(`value`: string, `position`: number, `info?`: [T](undefined)): *[LookupItem](lookupitem.md)*
+\+ **new LookupItem**(`value`: string, `position`: number, `info?`: T): *[LookupItem](lookupitem.md)*
 
 **Parameters:**
 
@@ -43,7 +43,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `value` | string | string value |
 `position` | number | position in text  |
-`info?` | [T](undefined) | - |
+`info?` | T | - |
 
 **Returns:** *[LookupItem](lookupitem.md)*
 
