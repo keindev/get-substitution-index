@@ -1,6 +1,36 @@
-{
-    "hooks": {
-        "pre-commit": "npm-run-all clean lint test build:*",
-        "commit-msg": "changelog lint --message HUSKY_GIT_PARAMS --lowercase-only"
-    }
-}
+# folders
+**/__mocks__/**
+**/__tests__/**
+node_modules/
+coverage/
+media/
+src/
+docs/
+
+# configs
+.github
+.vscode
+.env
+.editorconfig
+.gitattributes
+.eslintignore
+.eslintrc
+.huskyrc
+.prettierignore
+.prettierrc
+.travis.yml
+.yarnclean
+.changelogrc.yml
+.ghinfo
+.dependabot
+jest.config.js
+tsconfig.json
+yarn.lock
+
+# docs
+README.md
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+
+# logs
+yarn-error.log
