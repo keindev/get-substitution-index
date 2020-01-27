@@ -15,8 +15,10 @@
     "plugins": ["@typescript-eslint", "jest"],
     "rules": {
         "@typescript-eslint/member-ordering": "error",
+        "@typescript-eslint/interface-name-prefix": ["error", { "prefixWithI": "always" }],
         "max-lines-per-function": ["error", { "max": 40 }],
         "import/prefer-default-export": 0,
+        "import/extensions": 0,
         "max-len": ["error", { "code": 120 }],
         "indent": ["error", 4, { "SwitchCase": 1 }],
         "lines-between-class-members": 0,
@@ -36,7 +38,7 @@
         {
             "files": "*.test.ts",
             "rules": {
-                "max-lines-per-function": ["error", { "max": 100 }]
+                "max-lines-per-function": ["error", { "max": 200 }]
             }
         }
     ],

@@ -2,11 +2,11 @@ import faker from 'faker';
 import { LookupManager } from '../manager';
 import LookupItem from '../item';
 
-interface ExternalInfo {
+interface IExternalInfo {
     value: string;
 }
 
-const manager = new LookupManager<ExternalInfo>();
+const manager = new LookupManager<IExternalInfo>();
 const firstName = faker.name.firstName();
 const lastName = faker.name.lastName();
 const suffix = faker.name.suffix();
@@ -74,7 +74,7 @@ describe('LookupManager', () => {
     describe('Replace strings', () => {
         it('Replacing tags in text with markdown code block', () => {
             const text = 'code <div /> example';
-            const wrap = (item: LookupItem<ExternalInfo>): string => `\`${(item.info as ExternalInfo).value}\``;
+            const wrap = (item: LookupItem<IExternalInfo>): string => `\`${(item.info as IExternalInfo).value}\``;
 
             manager.add('<div />', 5, { value: '<span />' });
 

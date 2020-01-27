@@ -24,7 +24,7 @@ Manager for working with an array of strings
 
 ###  add
 
-▸ **add**(`value`: string, `position`: number, `info?`: [T](undefined)): *void*
+▸ **add**(`value`: string, `position`: number, `info?`: T): *void*
 
 Adds a new string to the list based on the position in the text:
 -   in the case of intersection of strings positions, the strings are merged
@@ -37,7 +37,7 @@ Name | Type | Description |
 ------ | ------ | ------ |
 `value` | string | string to add |
 `position` | number | position in text  |
-`info?` | [T](undefined) | - |
+`info?` | T | - |
 
 **Returns:** *void*
 

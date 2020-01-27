@@ -21,6 +21,8 @@ docs/
 .travis.yml
 .yarnclean
 .changelogrc.yml
+.ghinfo
+.dependabot
 jest.config.js
 tsconfig.json
 yarn.lock
