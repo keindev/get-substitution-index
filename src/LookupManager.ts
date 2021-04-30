@@ -60,7 +60,7 @@ export class LookupManager<T> {
   /**
    * Returns a list of added rows
    */
-  getList(): LookupItem<T>[] {
+  get items(): LookupItem<T>[] {
     return [...this.#list];
   }
 
