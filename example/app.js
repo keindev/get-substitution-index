@@ -1,4 +1,4 @@
-const { LookupManager } = require('../lib/LookupManager');
+import LookupManager from '../lib';
 
 const text = 'foo bar foobar bar foo';
 const expressions = [/foo/gi, /bar/gi, /foobar/gi];
