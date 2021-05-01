@@ -21,7 +21,8 @@ npm install string-lookup-manager
 ## Usage
 
 ```javascript
-const { LookupManager } = require('string-lookup-manager');
+import LookupManager from 'string-lookup-manager';
+
 const text = 'foo bar foobar bar foo';
 const expressions = [/foo/gi, /bar/gi, /foobar/gi];
 const manager = new LookupManager();
