@@ -12,7 +12,7 @@ Main parameters of the string, including its position in the text
 
 ## Hierarchy
 
-* **default**
+- **default**
 
   ↳ [*default*](lookupgroup.default.md)
 
@@ -40,13 +40,13 @@ Main parameters of the string, including its position in the text
 
 \+ **new default**<T\>(`value`: *string*, `position`: *number*, `info?`: T): [*default*](lookupitem.default.md)<T\>
 
-#### Type parameters:
+#### Type parameters
 
 | Name |
 | :------ |
 | `T` |
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -96,7 +96,7 @@ String value
 
 Checks if positions is cross
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -112,7 +112,7 @@ ___
 
 Checks if the given string is part of the current string
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |

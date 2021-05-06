@@ -32,7 +32,7 @@ Manager for working with an array of strings
 
 \+ **new LookupManager**<T\>(): [*LookupManager*](lookupmanager.lookupmanager-1.md)<T\>
 
-#### Type parameters:
+#### Type parameters
 
 | Name |
 | :------ |
@@ -61,7 +61,7 @@ Adds a new string to the list based on the position in the text:
 -   if a new string extends an existing one, it will replace it
 -   if a new string is part of an existing string, it will not be added
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -89,7 +89,7 @@ ___
 
 Replace strings in the text at the specified position, calling the conversion function for each replacement
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
