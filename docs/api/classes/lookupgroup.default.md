@@ -12,7 +12,7 @@ Group of strings whose positions is cross
 
 ## Hierarchy
 
-* [*default*](lookupitem.default.md)<T\>
+- [*default*](lookupitem.default.md)<T\>
 
   ↳ **default**
 
@@ -41,13 +41,13 @@ Group of strings whose positions is cross
 
 \+ **new default**<T\>(`a`: [*default*](lookupitem.default.md)<T\>, `b`: [*default*](lookupitem.default.md)<T\>): [*default*](lookupgroup.default.md)<T\>
 
-#### Type parameters:
+#### Type parameters
 
 | Name |
 | :------ |
 | `T` |
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -114,7 +114,7 @@ Inherited from: [default](lookupitem.default.md).[value](lookupitem.default.md#v
 
 Checks if positions is cross
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -132,7 +132,7 @@ ___
 
 Checks if the given string is part of the current string
 
-#### Parameters:
+#### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
