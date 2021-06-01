@@ -27,4 +27,3 @@ node_modules/
 src/
 tsconfig.build.json
 tsconfig.json
-typedoc.json

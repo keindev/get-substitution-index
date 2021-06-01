@@ -50,7 +50,3 @@ expressions.forEach(expression => {
 //  LookupItem { value: 'foo', start: 19, end: 21 }
 console.log(manager.items);
 ```
-
-## API
-
-Read the [API documentation](docs/api/index.md) for more information.

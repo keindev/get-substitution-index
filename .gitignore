@@ -14,7 +14,6 @@
 /.husky/
 /.vscode/
 /jest.modules.json
-/typedoc.json
 babel.config.cjs
 coverage
 jest.config.cjs
