@@ -1,12 +1,8 @@
 import LookupItem from './LookupItem';
 
-/**
- * Group of strings whose positions is cross
- */
+/** * Group of strings whose positions is cross */
 export default class LookupGroup<T> extends LookupItem<T> {
-  /**
-   * List of string whose positions is crossed
-   */
+  /** List of string whose positions is crossed */
   readonly group: [LookupItem<T>, LookupItem<T>];
 
   /**

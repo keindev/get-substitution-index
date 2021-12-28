@@ -4,9 +4,7 @@ import LookupItem from './LookupItem';
 const LEFT_ITEMS_COUNT_DEFAULT = -1;
 const RIGHT_ITEMS_COUNT_DEFAULT = 1;
 
-/**
- * Manager for working with an array of strings
- */
+/** Manager for working with an array of strings */
 export class LookupManager<T> {
   #list: LookupItem<T>[] = [];
 
@@ -57,11 +55,14 @@ export class LookupManager<T> {
     }
   }
 
-  /**
-   * Returns a list of added rows
-   */
+  /** Returns a list of added rows */
   get items(): LookupItem<T>[] {
     return [...this.#list];
+  }
+
+  /** Clears a string list */
+  clear(): void {
+    this.#list = [];
   }
 
   /**
@@ -85,13 +86,6 @@ export class LookupManager<T> {
     );
 
     return stack.join('');
-  }
-
-  /**
-   * Clears a string list
-   */
-  clear(): void {
-    this.#list = [];
   }
 
   private getLeftItemsCount(newItem: LookupItem<T>, from: number): number {
