@@ -1,4 +1,4 @@
-<p align="center"><img src="https://cdn.jsdelivr.net/gh/keindev/string-lookup-manager/media/logo.svg" alt="string-lookup-manager logo"></p>
+<p align="center"><img src="https://cdn.jsdelivr.net/gh/keindev/string-lookup-manager/media/banner.svg" alt="Package logo"></p>
 
 <p align="center">
     <a href="https://github.com/keindev/string-lookup-manager/actions"><img src="https://github.com/keindev/string-lookup-manager/actions/workflows/build.yml/badge.svg" alt="Build Status"></a>
@@ -9,7 +9,7 @@
 
 > An easy way to collect regular expressions search results.
 
-It often happens that you need to get an array of search results from several regular expressions. But search results may overlap and duplicate. This package will help you get clean ideas from the results of this search.
+It you need to get an array of search results from several regular expressions. But search results may overlap and duplicate. This package will help you get clean results of this search.
 
 ## Install
 
