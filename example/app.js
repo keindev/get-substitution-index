@@ -1,4 +1,4 @@
-import LookupManager from '../lib';
+import LookupManager from '../src';
 
 const text = 'foo bar foobar bar foo';
 const expressions = [/foo/gi, /bar/gi, /foobar/gi];
