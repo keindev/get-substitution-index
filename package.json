@@ -1,6 +1,6 @@
 {
   "name": "string-lookup-manager",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Easy way to collect regular expressions search results",
   "license": "MIT",
   "homepage": "https://github.com/keindev/string-lookup-manager#readme",
