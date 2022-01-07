@@ -55,7 +55,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-optimize-regex": "^1.2.1",
     "eslint-plugin-promise": "^6.0.0",
-    "faker": "^5.5.3",
+    "faker": "^6.6.6",
     "figma-portal": "^0.10.0",
     "ghinfo": "^2.0.3",
     "husky": "^7.0.4",
