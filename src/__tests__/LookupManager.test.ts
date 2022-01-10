@@ -1,5 +1,3 @@
-import faker from 'faker';
-
 import LookupItem from '../LookupItem';
 import LookupManager from '../LookupManager';
 
@@ -9,10 +7,10 @@ interface IExternalInfo {
 
 describe('LookupManager', () => {
   const manager = new LookupManager<IExternalInfo>();
-  const firstName = faker.name.firstName();
-  const lastName = faker.name.lastName();
-  const suffix = faker.name.suffix();
-  const fullName = `${firstName} ${lastName} ${suffix}`;
+  const firstName = 'Daniil';
+  const lastName = 'Ryazanov';
+  const patronymic = 'Sergeyevich';
+  const fullName = `${firstName} ${lastName} ${patronymic}`;
 
   beforeEach(() => {
     manager.clear();
@@ -50,12 +48,12 @@ describe('LookupManager', () => {
     });
 
     it('When a new string extends existing strings, a new string replaces them', () => {
-      const prefix = faker.name.prefix();
+      const prefix = 'Mr.';
 
       manager.add(prefix, 0);
       manager.add(firstName, prefix.length);
       manager.add(lastName, prefix.length + firstName.length);
-      manager.add(suffix, prefix.length + firstName.length + lastName.length);
+      manager.add(patronymic, prefix.length + firstName.length + lastName.length);
       manager.add(fullName, prefix.length);
 
       expect(manager.items).toMatchObject([
@@ -66,7 +64,7 @@ describe('LookupManager', () => {
 
     it('When an existing string cross with a new, strings are merged', () => {
       manager.add(`${firstName} ${lastName}`, 0);
-      manager.add(`${lastName} ${suffix}`, firstName.length);
+      manager.add(`${lastName} ${patronymic}`, firstName.length);
 
       expect(manager.items).toMatchObject([{ value: fullName, start: 0, end: fullName.length - 1 }]);
     });
