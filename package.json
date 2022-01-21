@@ -41,7 +41,7 @@
     "test:jest": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "devDependencies": {
-    "@tagproject/ts-package-shared-config": "^6.4.1",
+    "@tagproject/ts-package-shared-config": "^7.1.1",
     "@types/jest": "^27.4.0",
     "@types/node": "^17.0.8",
     "@typescript-eslint/eslint-plugin": "^5.9.1",
