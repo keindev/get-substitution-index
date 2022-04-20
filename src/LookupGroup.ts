@@ -1,4 +1,4 @@
-import LookupItem from './LookupItem';
+import LookupItem from './LookupItem.js';
 
 /** * Group of strings whose positions is cross */
 export default class LookupGroup<T> extends LookupItem<T> {

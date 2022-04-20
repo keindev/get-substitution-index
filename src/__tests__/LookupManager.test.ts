@@ -1,5 +1,5 @@
-import LookupItem from '../LookupItem';
-import LookupManager from '../LookupManager';
+import LookupItem from '../LookupItem.js';
+import LookupManager from '../LookupManager.js';
 
 interface IExternalInfo {
   value: string;
