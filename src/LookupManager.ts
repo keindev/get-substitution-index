@@ -1,5 +1,5 @@
-import LookupGroup from './LookupGroup';
-import LookupItem from './LookupItem';
+import LookupGroup from './LookupGroup.js';
+import LookupItem from './LookupItem.js';
 
 const LEFT_ITEMS_COUNT_DEFAULT = -1;
 const RIGHT_ITEMS_COUNT_DEFAULT = 1;

@@ -1,1 +1,1 @@
-export { default } from './LookupManager';
+export { default } from './LookupManager.js';

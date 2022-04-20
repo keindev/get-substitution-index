@@ -4,6 +4,7 @@
 *.seed
 *.tgz
 .env
+.eslintrc
 .yarn-integrity
 /.editorconfig
 /.eslintcache
@@ -21,6 +22,7 @@ lib
 logs
 node_modules/
 pids
+tsconfig.json
 tsconfig.tsbuildinfo
 yarn-debug.log*
 yarn-error.log*
