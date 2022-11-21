@@ -10,12 +10,12 @@
 /.eslintcache
 /.eslintignore
 /.eslintrc
-/.figma.yml
 /.husky/
 /.prettierignore
 /.prettierrc
 /.vscode/
 /jest.config.js
+/src/**/tsconfig.json
 /tsconfig.json
 coverage
 lib
