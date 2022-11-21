@@ -1,4 +1,4 @@
-<p align="center"><img src="https://cdn.jsdelivr.net/gh/keindev/string-lookup-manager/media/banner.svg" alt="Package logo"></p>
+<p align="center"><img src="https://cdn.jsdelivr.net/gh/tagproject/art/packages/string-lookup-manager/banner.svg" alt="Package logo"></p>
 
 <p align="center">
     <a href="https://github.com/keindev/string-lookup-manager/actions"><img src="https://github.com/keindev/string-lookup-manager/actions/workflows/build.yml/badge.svg" alt="Build Status"></a>
@@ -13,7 +13,7 @@ It you need to get an array of search results from several regular expressions. 
 
 ## Install
 
-```console
+```bash
 npm install string-lookup-manager
 ```
 
