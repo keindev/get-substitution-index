@@ -10,7 +10,7 @@ export default class LookupGroup<T> extends LookupItem<T> {
    * @param b - string with the max ending position index
    */
   constructor(a: LookupItem<T>, b: LookupItem<T>) {
-    super(a.value + b.value.substr(a.end - b.start), a.start);
+    super(a.value + b.value.substring(a.end - b.start), a.start);
 
     this.group = [a, b];
   }
