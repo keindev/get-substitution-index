@@ -1,6 +1,6 @@
 {
   "name": "string-lookup-manager",
-  "version": "3.0.9",
+  "version": "4.0.0",
   "description": "Easy way to collect regular expressions search results",
   "keywords": [
     "string",
