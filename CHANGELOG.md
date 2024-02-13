@@ -5,7 +5,7 @@
 <details>
 <summary>Dev Dependencies</summary>
 
-- Changed **[@tagproject/ts-package-shared-config](https://www.npmjs.com/package/@tagproject/ts-package-shared-config)** from `^11.0.1` to `^11.0.3`
+- Changed **[@tagproject/ts-package-shared-config](https://www.npmjs.com/package/@tagproject/ts-package-shared-config)** from `^11.0.1` to `^11.0.4`
 - Changed **[ts-node](https://www.npmjs.com/package/ts-node)** from `^10.9.1` to `^10.9.2`
 
 </details>
