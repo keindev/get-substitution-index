@@ -39,7 +39,7 @@
     "test:jest": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "devDependencies": {
-    "@tagproject/ts-package-shared-config": "^11.0.3",
+    "@tagproject/ts-package-shared-config": "^11.0.4",
     "ts-node": "^10.9.2"
   }
 }
